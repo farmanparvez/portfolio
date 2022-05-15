@@ -1,0 +1,14 @@
+# Don't check auto-generated stuff into git
+coverage
+node_modules
+stats.json
+build
+package-lock.json
+app/containers/App/constants.js
+# Cruft
+.DS_Store
+npm-debug.log
+.idea
+*.pem
+
+package-lock.json
