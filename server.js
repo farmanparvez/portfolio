@@ -18,6 +18,6 @@ const connectDB = () => {
 };
 connectDB();
 
-const Port = process.env.Port || 5000;
+const Port = process.env.PORT || 5000;
 
 app.listen(Port, (req, res) => console.log(`app is runnng at ${Port}`));
