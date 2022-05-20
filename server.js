@@ -20,4 +20,4 @@ connectDB();
 
 const Port = process.env.PORT || 5000;
 
-app.listen(Port, (req, res) => console.log(`app is runnng at ${Port}`));
+app.listen(Port, () => console.log(`app is runnng at ${Port}`));
