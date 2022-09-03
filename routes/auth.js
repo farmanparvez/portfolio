@@ -6,4 +6,4 @@ const protect = require('../middleware/auth')
 authRouter.route('/signUp').post(authControllers.signUp)
 authRouter.route('/login').post(authControllers.login)
 
-module.exports = authRouter
+module.exports = authRouter;
