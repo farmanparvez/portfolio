@@ -4,20 +4,26 @@ const menu = [
     {
         key: "1",
         // icon: <UserOutlined />,
-        label: "nav 1",
+        label: "Skill",
         to: '/adminskills'
       },
       {
         key: "2",
         // icon: <VideoCameraOutlined />,
-        label: "nav 2",
+        label: "Education",
         to: '/education'
       },
       {
         key: "3",
         // icon: <UploadOutlined />,
-        label: "nav 3",
-        to: '/skills'
+        label: "Hero",
+        to: '/hero'
+      },
+      {
+        key: "4",
+        // icon: <UploadOutlined />,
+        label: "Work",
+        to: '/work'
       },
 ]
 

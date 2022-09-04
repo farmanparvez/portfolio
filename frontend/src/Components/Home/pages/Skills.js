@@ -1,18 +1,17 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSkills } from "../../../Redux/actions/skillsActions";
-import { skillsActions } from "../../../Redux/reducers/skillsReducer";
-
+import { reset } from "../../../Redux/reducers/skillsReducer";
 
 function Skills() {
-const dispatch = useDispatch()
-const {skills} = useSelector(state => state.skills)
-// console.log(skills)
+  const dispatch = useDispatch();
+  const { skills } = useSelector((state) => state.skills);
+  console.log(skills);
 
   useEffect(() => {
-    dispatch(getSkills())
-    return () => dispatch(skillsActions.reset())
-  },[])
+    dispatch(getSkills());
+    return () => dispatch(reset());
+  }, []);
   const data = [
     {
       icon: "fab fa-html5",
@@ -52,10 +51,11 @@ const {skills} = useSelector(state => state.skills)
         <div className="small-container">
           {skills?.map((del, index) => (
             <div key={del._id} className="box">
-              <div className="inner-box">
-                <i class={del.icon}></i>
-              </div>
+              {/* <div className="inner-box">
+                <p className="skills-heading-detail">{del.title}</p>
+              </div> */}
               <div className="detail">
+                <i class={del.icon}></i>
                 <p className="skills-heading-detail">{del.title}</p>
                 <p>{del.desc}</p>
               </div>

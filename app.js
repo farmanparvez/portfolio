@@ -2,6 +2,11 @@ const express = require("express");
 const app = express();
 const morgan = require('morgan')
 const authRouter = require("./routes/auth");
+const skillRouter = require('./routes/skill')
+const educationRouter = require('./routes/skill')
+const heroRouter = require('./routes/hero')
+const workRouter = require('./routes/work')
+const aboutRouter = require('./routes/about')
 const AppError = require("./utils/appError");
 const globalErrorHandler = require("./utils/globalErrorHandler");
 
@@ -13,7 +18,11 @@ if (process.env.NODE_ENV === "development") {
 app.use(express.json());
 
 app.use("/", authRouter);
-
+app.use("/skill", skillRouter);
+app.use("/education", educationRouter);
+app.use("/hero", heroRouter);
+app.use("/work", workRouter);
+app.use("/about", aboutRouter);
 
 
 if(process.env.NODE_ENV === 'production') {

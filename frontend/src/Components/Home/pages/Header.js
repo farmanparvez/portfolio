@@ -1,4 +1,17 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getHeroDetails } from "../../../Redux/actions/heroAction"; 
+import { reset } from "../../../Redux/reducers/heroReducer";
+
 function Header() {
+  const dispatch = useDispatch();
+  const { heroDetails  } = useSelector((state) => state.hero);
+  console.log(heroDetails);
+
+  useEffect(() => {
+    dispatch(getHeroDetails());
+    return () => dispatch(reset());
+  }, []);
   return (
     <>
       <div className="container" id='home'>
@@ -8,16 +21,21 @@ function Header() {
           </div>
           <div className="col-1">
             <div className="heading">
-              <h4>Mohd Farman Parvez</h4>
+              <h4>{heroDetails?.name}</h4>
+              {/* <h4>Mohd Farman Parvez</h4> */}
               <h1 style={{color: '#fff'}}>
-                I`m a Creative <br /> <span> Web Developer</span>
+              {heroDetails.profileTitle}
+                {/* I`m a Creative <br /> <span> Web Developer</span> */}
               </h1>
               <p>
+               {heroDetails?.detail}
+              </p>
+              {/* <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
                 voluptatem nostrum quaerat repellendus facere tenetur? Ipsam
                 facilis dolorum repudiandae cumque illum tenetur nemo dolores.
                 Ea nostrum aliquid aut porro saepe!
-              </p>
+              </p> */}
               <a href="/" className="btn">
                 Download Cv
               </a>

@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
-  createSkills,
-  getSkills,
-  editSkillDetails,
-  deleteskill,
-} from "../actions/skillsActions";
+  createWorkDetails,
+  getWorkDetails,
+  editWorkDetails,
+  deleteWork,
+} from "../actions/workActions";
 
-const skillsReducer = createSlice({
-  name: "skills",
+const workReducer = createSlice({
+  name: "work",
   initialState: {
     isLoading: false,
     isSuccess: false,
     isError: false,
-    isMessage: false,
-    skills: [],
+    isMessage: null,
+    workDetails: [],
     isVisible: null,
   },
   reducers: {
@@ -29,60 +29,57 @@ const skillsReducer = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(createSkills.pending, (state, actions) => {
+      .addCase(createWorkDetails.pending, (state, actions) => {
         state.isLoading = true;
       })
-      .addCase(createSkills.fulfilled, (state, actions) => {
+      .addCase(createWorkDetails.fulfilled, (state, actions) => {
         state.isLoading = false;
         state.isSuccess = true;
         state.isMessage = actions.payload.message;
-        state.isVisible = false
-        // state.user = actions.payload
+        state.isVisible = false;
+        console.log(actions.payload);
       })
-      .addCase(createSkills.rejected, (state, actions) => {
+      .addCase(createWorkDetails.rejected, (state, actions) => {
         state.isLoading = false;
         state.isError = true;
         state.isMessage = actions.payload;
       })
-      .addCase(editSkillDetails.pending, (state, actions) => {
+      .addCase(editWorkDetails.pending, (state, actions) => {
         state.isLoading = true;
       })
-      .addCase(editSkillDetails.fulfilled, (state, actions) => {
+      .addCase(editWorkDetails.fulfilled, (state, actions) => {
         state.isLoading = false;
         state.isSuccess = true;
         state.isMessage = actions.payload.message;
-        state.isVisible = false
-        // state.user = actions.payload
+        state.isVisible = false;
       })
-      .addCase(editSkillDetails.rejected, (state, actions) => {
+      .addCase(editWorkDetails.rejected, (state, actions) => {
         state.isLoading = false;
         state.isError = true;
         state.isMessage = actions.payload;
       })
-      .addCase(deleteskill.pending, (state, actions) => {
+      .addCase(deleteWork.pending, (state, actions) => {
         state.isLoading = true;
       })
-      .addCase(deleteskill.fulfilled, (state, actions) => {
+      .addCase(deleteWork.fulfilled, (state, actions) => {
         state.isLoading = false;
         state.isSuccess = true;
         state.isMessage = actions.payload.message;
-        // state.user = actions.payload
+        state.isVisible = false;
       })
-      .addCase(deleteskill.rejected, (state, actions) => {
+      .addCase(deleteWork.rejected, (state, actions) => {
         state.isLoading = false;
         state.isError = true;
         state.isMessage = actions.payload;
       })
-      .addCase(getSkills.pending, (state, actions) => {
+      .addCase(getWorkDetails.pending, (state, actions) => {
         state.isLoading = true;
       })
-      .addCase(getSkills.fulfilled, (state, actions) => {
+      .addCase(getWorkDetails.fulfilled, (state, actions) => {
         state.isLoading = false;
-        // state.isSuccess = true;
-        state.skills = actions.payload;
-        // console.log(actions.payload)
+        state.workDetails = actions.payload.work;
       })
-      .addCase(getSkills.rejected, (state, actions) => {
+      .addCase(getWorkDetails.rejected, (state, actions) => {
         state.isLoading = false;
         state.isError = true;
         state.isMessage = actions.payload;
@@ -90,5 +87,5 @@ const skillsReducer = createSlice({
   },
 });
 
-export const { setModalState, reset } = skillsReducer.actions;
-export default skillsReducer.reducer;
+export const { reset, setModalState } = workReducer.actions;
+export default workReducer.reducer;
