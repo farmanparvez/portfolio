@@ -3,13 +3,9 @@ import { Layout, Menu } from "antd";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
 } from "@ant-design/icons";
 import "./dashboard.css";
-import { Link, useRouteMatch } from "react-router-dom";
-import Container from "../Layout/Container";
+import { Link } from "react-router-dom";
 import menu from "../../utils/NavMenu";
 const { Header, Sider, Content } = Layout;
 

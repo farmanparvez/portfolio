@@ -1,5 +1,5 @@
 import { postRequest, getRequest, putRequest, deleteRequest } from "../utils/request"
-const url = 'user'
+// const url = 'user'
 
 export const getSkillsAPI = () => getRequest(`/skill`)
 export const createSkillsAPI = (data) => postRequest(`/skill`, data)

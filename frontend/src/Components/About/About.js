@@ -1,19 +1,19 @@
 import { useEffect } from "react";
 // import CreateWorkForm from "./CreateWorkForm";
 import Container from "../Layout/Container";
-import WorkTable from "./Table/WorkTable";
+import AboutTable from "./Table/AboutTable";
 import { useDispatch, useSelector } from "react-redux";
-import { getWorkDetails } from "../../Redux/actions/workActions";
-import { reset } from "../../Redux/reducers/workReducer";
-import Modal from "./Modal/WorkModal"
+import { getAbout } from "../../Redux/actions/aboutAction";
+import { reset } from "../../Redux/reducers/aboutReducer";
+import Modal from "./Modal/AboutModal"
 import { openNotificationWithIcon } from "../../utils/notification";
 
-const Work = () => {
+const About = () => {
   const dispatch = useDispatch();
-  const { workDetails, isVisible, isSuccess, isError, isMessage } = useSelector((state) => state.work);
-
+  const { about, isVisible, isSuccess, isError, isMessage } = useSelector((state) => state.about);
+  console.log(isSuccess, isError, isMessage)
   useEffect(() => {
-    dispatch(getWorkDetails());
+    dispatch(getAbout());
     return () => dispatch(reset());
   }, [dispatch]);
 
@@ -26,7 +26,7 @@ const Work = () => {
   return (
     <Container>
       {/* <h1>Work</h1> */}
-      <WorkTable workDetails={workDetails}/>
+      <AboutTable aboutDetails={about}/>
       {/* <CreateWorkForm /> */}
       {isVisible && <Modal />}
 
@@ -34,4 +34,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default About;

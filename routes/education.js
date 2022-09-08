@@ -3,11 +3,11 @@ const educationRouter = express.Router();
 const protect = require("../middleware/auth");
 const educationControllers = require("../controllers/EducationController")
 
-authRouter
+educationRouter
   .route("/")
-  .get(protect, educationControllers.getEducation)
+  .get(educationControllers.getEducation)
   .post(protect, educationControllers.createEducation)
   .put(protect, educationControllers.updateEducation)
-authRouter.route('/:id').delete(protect, educationControllers.deleteEducation)
+educationRouter.route('/:id').delete(protect, educationControllers.deleteEducation)
 
 module.exports = educationRouter;

@@ -8,28 +8,24 @@ import Modal from "./Modal";
 function Work() {
   const dispatch = useDispatch();
   const { workDetails, isVisible } = useSelector((state) => state.work);
-  console.log(workDetails);
+  // console.log(workDetails);
 
   useEffect(() => {
     dispatch(getWorkDetails());
     return () => dispatch(reset());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
-      <div className="shills-container" id="work">
+      <div className="work-container" id="work">
         <h1>Our Works</h1>
         <div className="small-container">
           {workDetails?.map((val) => (
-            <div key={val._id} className="box ">
+            <div key={val._id} className="box work-box">
               <Row gutter={[16, 24]} justify="center">
                 <Col>
-                  <h1>{val.name}</h1>
+                  <p className="work-heading-detail">{val.name}</p>
                 </Col>
-                {/* <Col span={24}>{val.name}</Col>
-                <Col span={24}><a target="_blank" href={`${val.repoLink}`}>{val.repoLink}</a></Col>
-                <Col span={24}><a target="_blank" href={`${val.websiteLink}`}>{val.websiteLink}</a></Col>
-                <Col span={24}>{val.details}</Col> */}
                 <Col span={24}>
                   <Button
                     onClick={() =>

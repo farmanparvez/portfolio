@@ -1,5 +1,4 @@
 import {useEffect} from "react";
-import CreateSkillsForm from "./CreateSkillsForm";
 import { useDispatch, useSelector } from "react-redux";
 import Container from "../Layout/Container";
 import SkillTable from "./Table/skillsTable";

@@ -5,7 +5,7 @@ const aboutControllers = require("../controllers/aboutControllers");
 
 aboutRouter
   .route("/")
-  .get(protect, aboutControllers.getAbout)
+  .get(aboutControllers.getAbout)
   .post(protect, aboutControllers.createAbout)
   .put(protect, aboutControllers.updateAbout);
 aboutRouter.route("/:id").delete(protect, aboutControllers.deleteAbout);

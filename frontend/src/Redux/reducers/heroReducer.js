@@ -41,7 +41,7 @@ const heroReducer = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.heroDetails = actions.payload.details
-        console.log(actions.payload)
+        // console.log(actions.payload)
       })
       .addCase(getHeroDetails.rejected, (state, actions) => {
         state.isLoading = false;

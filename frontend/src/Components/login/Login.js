@@ -18,7 +18,7 @@ const Login = () => {
     if(isError) openNotificationWithIcon('error', 'Failed', isMessage)
     // dispatch(reset())
     return () => dispatch(reset())
-  },[isSuccess, isError, isMessage, user])
+  },[isSuccess, isError, isMessage, user, dispatch, navigate])
 
   const onFinish = (values: any) => {
     console.log("Success:", values);

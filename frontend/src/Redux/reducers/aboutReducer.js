@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createEducation, getEducation, editEducationDetails, deleteEducation } from "../actions/educationActions";
+import { getAbout, createAbout, editAboutDetails, deleteAbout } from "../actions/aboutAction";
 
-const educationReducer = createSlice({
-    name:'education',
+const aboutReducer = createSlice({
+    name:'about',
     initialState:{
         isLoading: false,
         isSuccess: false,
         isError: false,
         isMessage: false,
-        education: []
+        about: []
     },
     reducers: {
         reset: (state) => {
@@ -23,57 +23,58 @@ const educationReducer = createSlice({
       },
       extraReducers: (builder) => {
         builder
-          .addCase(createEducation.pending, (state, actions) => {
+          .addCase(createAbout.pending, (state, actions) => {
             state.isLoading = true;
           })
-          .addCase(createEducation.fulfilled, (state, actions) => {
+          .addCase(createAbout.fulfilled, (state, actions) => {
             state.isLoading = false;
             state.isSuccess = true;
             state.isVisible = false
-            // state.user = actions.payload
+            state.isMessage = actions.payload.message
           })
-          .addCase(createEducation.rejected, (state, actions) => {
+          .addCase(createAbout.rejected, (state, actions) => {
             state.isLoading = false;
             state.isError = true;
             state.isMessage = actions.payload;
           })
-          .addCase(editEducationDetails.pending, (state, actions) => {
+          .addCase(editAboutDetails.pending, (state, actions) => {
             state.isLoading = true;
           })
-          .addCase(editEducationDetails.fulfilled, (state, actions) => {
+          .addCase(editAboutDetails.fulfilled, (state, actions) => {
             state.isLoading = false;
             state.isSuccess = true;
             state.isVisible = false
-
+            state.isMessage = actions.payload.message;
             // state.user = actions.payload
           })
-          .addCase(editEducationDetails.rejected, (state, actions) => {
+          .addCase(editAboutDetails.rejected, (state, actions) => {
             state.isLoading = false;
             state.isError = true;
             state.isMessage = actions.payload;
           })
-          .addCase(deleteEducation.pending, (state, actions) => {
+          .addCase(deleteAbout.pending, (state, actions) => {
             state.isLoading = true;
           })
-          .addCase(deleteEducation.fulfilled, (state, actions) => {
+          .addCase(deleteAbout.fulfilled, (state, actions) => {
             state.isLoading = false;
             state.isSuccess = true;
+            state.isMessage = actions.payload;
             // state.user = actions.payload
           })
-          .addCase(deleteEducation.rejected, (state, actions) => {
+          .addCase(deleteAbout.rejected, (state, actions) => {
             state.isLoading = false;
             state.isError = true;
             state.isMessage = actions.payload;
           })
-          .addCase(getEducation.pending, (state, actions) => {
+          .addCase(getAbout.pending, (state, actions) => {
             state.isLoading = true;
           })
-          .addCase(getEducation.fulfilled, (state, actions) => {
+          .addCase(getAbout.fulfilled, (state, actions) => {
             state.isLoading = false;
             // state.isSuccess = true;
-            state.education = actions.payload
+            state.about = actions.payload
           })
-          .addCase(getEducation.rejected, (state, actions) => {
+          .addCase(getAbout.rejected, (state, actions) => {
             state.isLoading = false;
             state.isError = true;
             state.isMessage = actions.payload;
@@ -81,5 +82,5 @@ const educationReducer = createSlice({
       },
 })
 
-export const { reset, setModalState } = educationReducer.actions;
-export default educationReducer.reducer
+export const { reset, setModalState } = aboutReducer.actions;
+export default aboutReducer.reducer

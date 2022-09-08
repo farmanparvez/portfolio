@@ -11,6 +11,7 @@
   width: 90%;
   margin: 0 auto;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .col-1 {
   width: max(290px, 48%);
@@ -48,6 +49,11 @@ span {
   margin-top: 3rem;
 }
 
+.hero-heading h4{
+    text-transform: capitalize;
+
+}
+
 /*------------------------------------------ About Section------------------------------------------ */
 
 .mid-container {
@@ -77,10 +83,11 @@ span {
 }
 .col-2 h2 {
   /* margin-top: 140px; */
-  line-height: 3rem;
+  line-height: 1rem;
   font-size: 1.2rem;
   font-weight: lighter;
   color: var(--maincolor);
+  text-transform: capitalize;
 }
 .para {
   max-width: 90%;
@@ -89,8 +96,9 @@ span {
   line-height: 1.3rem;
   font-size: 0.8rem;
   padding-top: 1rem;
-  padding-bottom: 2rem;
+  /* padding-bottom: 1rem; */
 }
+
 /*------------------------------- Skills section *-------------------------------------------*/
 
 .shills-container {
@@ -170,6 +178,28 @@ span {
 }
 
 /* -----------------------------------------work-------------------------------------- */
+.work-container{
+  background: whitesmoke;
+}
+.work-container h1 {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+.work-heading-detail{
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0 !important;
+}
+.work-box{
+  /* flex-basis: 33%; */
+  max-width: 330px;
+}
+/* ----------------------------------------about---------------------------------------- */
+.about-link-icon i{
+  font-size: 2rem;
+}
 
 /* --------------------------------Contact------------------------------------------- */
 
@@ -215,6 +245,7 @@ span {
 }
 .inner-input {
   width: 48%;
+  margin-bottom: 15px;
 }
 input {
   width: 100%;

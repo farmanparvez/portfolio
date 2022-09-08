@@ -4,6 +4,7 @@ import skillsReducer from "./Redux/reducers/skillsReducer";
 import EducationReducer from "./Redux/reducers/EducationReducer";
 import HeroReducer from "./Redux/reducers/heroReducer";
 import WorkReducer from "./Redux/reducers/workReducer";
+import AboutReducer from "./Redux/reducers/aboutReducer";
 
 export const store =  configureStore({
     reducer: {
@@ -12,6 +13,7 @@ export const store =  configureStore({
         education: EducationReducer,
         hero: HeroReducer,
         work: WorkReducer,
+        about: AboutReducer,
     },
 })
 

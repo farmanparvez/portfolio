@@ -4,7 +4,13 @@ const aboutSehema = new mongoose.Schema({
     name: {
         type: String
     },
-    about: {
+    email:{
+        type: String
+    },
+    phoneNumber: {
+        type: String
+    },
+    description: {
         type: String
     },
     links: {

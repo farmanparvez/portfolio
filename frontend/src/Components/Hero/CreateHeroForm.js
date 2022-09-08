@@ -20,7 +20,7 @@ const CreateHeroForm = () => {
     if (isSuccess) openNotificationWithIcon("success", "Success", isMessage);
     if (isError) openNotificationWithIcon("error", "Failed", isMessage);
     return () => dispatch(reset());
-  }, [isSuccess, isError, isMessage]);
+  }, [isSuccess, isError, isMessage, dispatch]);
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);

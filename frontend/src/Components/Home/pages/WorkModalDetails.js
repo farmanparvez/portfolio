@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Button, Divider, Badge, Descriptions } from "antd";
+import { Row, Descriptions } from "antd";
 
 const WorkModalDetails = ({ details }) => {
   return (
@@ -24,7 +24,7 @@ const WorkModalDetails = ({ details }) => {
             </a>
           </Descriptions.Item>
           <Descriptions.Item label="Details" span={24}>
-           <p> {details.details}</p>
+           <h4> {details.details}</h4>
           </Descriptions.Item>
         </Descriptions>
       </Row>

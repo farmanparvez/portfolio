@@ -5,7 +5,7 @@ import { createWorkDetailsAPI, getWorkDetailsAPI, editWorkDetailsAPI, deleteWork
 export const getWorkDetails = createAsyncThunk("wrok/getWorkDetails", async(data, thunkAPI) => {
     try {
         const res = await getWorkDetailsAPI(data)
-        console.log(res)
+        // console.log(res)
         return res
     } catch (error) {
         const message = error?.response?.data?.message || error?.message || error.toString()

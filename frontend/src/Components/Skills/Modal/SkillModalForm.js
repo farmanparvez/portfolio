@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Button, Form, Input } from "antd";
 import {
   createSkills,
@@ -36,9 +36,9 @@ const SkillModalForm = ({ details }) => {
     <Form
       name="basic"
       initialValues={{
-        icon: details.icon,
-        title: details.title,
-        description: details.description,
+        icon: details?.icon,
+        title: details?.title,
+        description: details?.description,
       }}
       onFinish={onFinish}
       // onFinishFailed={onFinishFailed}

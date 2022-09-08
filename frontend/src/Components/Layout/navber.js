@@ -25,7 +25,8 @@ const Navber = () => {
         <>
             <div className="navber">
                 <nav>
-                <h1 className="logo" onClick={() => navigate('/')}><CgShapeCircle className="cg" />WeBX</h1>
+                <h1 className="logo" onClick={() => navigate('/')}>{"<Code>"}</h1>
+                {/* <h1 className="logo" onClick={() => navigate('/')}><CgShapeCircle className="cg" />{"<Code>"}</h1> */}
                     <div className="left">
                         <ul className={show ? "nav ul mobile" : "nav ul"}>
                           {/* {window.location.pathname !== '/' ?  <li><NavLink to='/' activeClassName="active" spy={true} smooth={true} offset={-100} duration={500}>Home</NavLink></li> :

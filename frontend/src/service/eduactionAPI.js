@@ -1,8 +1,8 @@
 
-import { postRequest, getRequest } from "../utils/request"
-const url = 'user'
+import { postRequest, getRequest, putRequest, deleteRequest } from "../utils/request"
 
-export const createEducationAPI = data => postRequest(`${url}/education`, data)
-export const getEducationAPI = () => getRequest(`${url}/education`)
-// export const logoutAPI = () => localStorage.removeItem('porToken')
+export const getEducationAPI = () => getRequest(`/education`)
+export const createEducationAPI = data => postRequest(`/education`, data)
+export const editEducationDetailsAPI = data => putRequest(`/education`, data)
+export const deleteEducationDetailsAPI = data => deleteRequest(`/education/${data.id}`)
 

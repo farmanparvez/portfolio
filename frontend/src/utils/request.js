@@ -1,5 +1,5 @@
 import axios from "axios"
-import { backend_Url } from "./enviroment"
+// import { backend_Url } from "./enviroment"
 
 export const getRequest = (url, data) => {
     const authToken = localStorage.getItem('porToken') ? localStorage.getItem( 'porToken') : undefined

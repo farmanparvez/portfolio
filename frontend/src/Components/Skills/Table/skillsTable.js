@@ -14,7 +14,7 @@ console.log(skills)
       title: "Icon",
       dataIndex: "icon",
       key: "icon",
-      render: (text) => <a>{text}</a>,
+      render: (text) => <span>{text}</span>,
     },
     {
       title: "Title",

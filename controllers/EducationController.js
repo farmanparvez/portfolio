@@ -12,7 +12,7 @@ exports.getEducation  = catchAsync(async (req, res, next) => {
     });
   });
 
-exports.createEducation = catchAsync(async (req, req, next) => {
+exports.createEducation = catchAsync(async (req, res, next) => {
   const { degree, institution, to, from } = req.body;
   const education = await Education.findOne({ degree });
 

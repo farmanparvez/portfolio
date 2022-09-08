@@ -2,11 +2,11 @@ import React, { Fragment } from "react";
 import CustomTable from "../../CustomTable/CustomTable";
 import { Row, Col, Button, Popconfirm } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { setModalState } from "../../../Redux/reducers/workReducer";
-import { deleteWork } from "../../../Redux/actions/workActions";
+import { setModalState } from "../../../Redux/reducers/aboutReducer";
+import { deleteAbout } from "../../../Redux/actions/aboutAction";
 
-const WorkTable = ({ workDetails }) => {
-  const { isLoading } = useSelector((state) => state.work);
+const AboutTable = ({ aboutDetails }) => {
+  const { isLoading } = useSelector((state) => state.about);
 
   const dispatch = useDispatch();
   const columns = [
@@ -18,15 +18,15 @@ const WorkTable = ({ workDetails }) => {
       render: (text) => <span>{text}</span>,
     },
     {
-      title: "repoLink",
+      title: "Phone Number",
       width: 50,
-      dataIndex: "repoLink",
-      key: "repoLink",
+      dataIndex: "phoneNumber",
+      key: "phoneNumber",
     },
     {
-      title: "Website url",
+      title: "Description",
       width: 10,
-      dataIndex: "websiteLink",
+      dataIndex: "description",
       key: "websiteLink",
     },
     {
@@ -49,7 +49,7 @@ const WorkTable = ({ workDetails }) => {
                   dispatch(
                     setModalState({
                       visible: true,
-                      type: "adminWorkModal",
+                      type: "adminAboutModal",
                       details: record,
                     })
                   )
@@ -61,7 +61,7 @@ const WorkTable = ({ workDetails }) => {
             <Col>
               <Popconfirm
                 title="Sure to delete?"
-                onConfirm={() => dispatch( deleteWork({id: record._id}))}
+                onConfirm={() => dispatch(deleteAbout({id: record._id}))}
               >
                 <Button>Delete</Button>
               </Popconfirm>
@@ -82,7 +82,7 @@ const WorkTable = ({ workDetails }) => {
           {" "}
           <Button
             onClick={() =>
-              dispatch(setModalState({ visible: true, type: "adminWorkModal" }))
+              dispatch(setModalState({ visible: true, type: "adminAboutModal" }))
             }
           >
             Add
@@ -97,11 +97,11 @@ const WorkTable = ({ workDetails }) => {
       <CustomTable
         title={() => header}
         columns={columns}
-        dataSource={workDetails}
+        dataSource={aboutDetails}
         loading={isLoading}
       />
     </div>
   );
 };
 
-export default WorkTable;
+export default AboutTable;

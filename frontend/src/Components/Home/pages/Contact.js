@@ -30,7 +30,7 @@ function Contact() {
                         <input className = "inner-input" type="text" placeholder = "first name" />
                         <input className = "inner-input" type="text" placeholder = "last name" />
                     </div>
-                    <input type="text" placeholder = "Enter your email" /><br />
+                    <input type="text" style={{marginBottom: '15px'}} placeholder = "Enter your email" /><br />
                     <textarea name="" placeholder = "enter the text" ></textarea>
                     <div className="btn "> Contact Us</div>
                     </div>

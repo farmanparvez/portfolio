@@ -1,4 +1,4 @@
-import Skills from "../Components/Skills/Skills"
+// import Skills from "../Components/Skills/Skills"
 
 const menu = [
     {
@@ -24,6 +24,12 @@ const menu = [
         // icon: <UploadOutlined />,
         label: "Work",
         to: '/work'
+      },
+      {
+        key: "5",
+        // icon: <UploadOutlined />,
+        label: "About",
+        to: '/about'
       },
 ]
 

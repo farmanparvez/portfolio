@@ -1,21 +1,21 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { createEducationAPI, getEducationAPI, editEducationDetailsAPI, deleteEducationDetailsAPI } from "../../service/eduactionAPI"; 
+import {getAboutAPI,  createAboutAPI, editAboutDetailsAPI, deleteAboutDetailsAPI } from "../../service/aboutAPI"; 
 
-export const getEducation = createAsyncThunk('education/getEducation', async(data, thunkAPI) => {
+export const getAbout = createAsyncThunk('about/getAbout', async(_, thunkAPI) => {
     try {
-        const res = await getEducationAPI()
+        const res = await getAboutAPI()
         // console.log(res)
-        return res?.education
+        return res?.about
     } catch (error) {
         console.log(error.response.data.message )
         const message = error.response.data.message || error.message.toString()
         return thunkAPI.rejectWithValue(message)
     }
 })
-export const createEducation = createAsyncThunk('education/createEducation', async(data, thunkAPI) => {
+export const createAbout = createAsyncThunk('About/createAbout', async(data, thunkAPI) => {
     try {
-        const res = await createEducationAPI(data)
-        thunkAPI.dispatch(getEducation());
+        const res = await createAboutAPI(data)
+        thunkAPI.dispatch(getAbout());
         return res
     } catch (error) {
         console.log(error.response.data.message )
@@ -23,12 +23,12 @@ export const createEducation = createAsyncThunk('education/createEducation', asy
         return thunkAPI.rejectWithValue(message)
     }
 })
-export const editEducationDetails = createAsyncThunk(
-    "education/editEducationDetails",
+export const editAboutDetails = createAsyncThunk(
+    "about/editAboutDetails",
     async (data, thunkAPI) => {
       try {
-        const res = await editEducationDetailsAPI(data);
-        thunkAPI.dispatch(getEducation());
+        const res = await editAboutDetailsAPI(data);
+        thunkAPI.dispatch(getAbout());
         return res;
       } catch (error) {
         const message =
@@ -38,12 +38,12 @@ export const editEducationDetails = createAsyncThunk(
     }
   );
   
-  export const deleteEducation = createAsyncThunk(
-    "Education/deleteEducation",
+  export const deleteAbout = createAsyncThunk(
+    "about/deleteAbout",
     async (data, thunkAPI) => {
       try {
-        const res = await deleteEducationDetailsAPI(data);
-        thunkAPI.dispatch(getEducation());
+        const res = await deleteAboutDetailsAPI(data);
+        thunkAPI.dispatch(getAbout());
         return res;
       } catch (error) {
         const message =

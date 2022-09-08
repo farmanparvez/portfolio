@@ -13,34 +13,31 @@ exports.getAbout = catchAsync(async (req, res, next) => {
   });
 
 exports.createAbout = catchAsync(async (req, res, next) => {
-  const { degree, institution, to, from } = req.body;
-  const about = await About.findOne({ degree });
+  const { name, email, phoneNumber, description, links } = req.body;
+  // const about = await About.findOne({ degree });
 
-  if (about) return next(new AppError("Degree already exits", 400));
+  // if (about) return next(new AppError("Degree already exits", 400));
 
   await About.create({
-    degree,
-    institution,
-    from,
-    to,
+    name, email, phoneNumber, description, links
   });
 
   res.status(200).json({
     status: "success",
     message: "About created successfully",
-    About,
+    // about,
   });
 });
 
 exports.updateAbout  = catchAsync(async (req, res, next) => {
-    const { degree, institution, to, from, id } = req.body;
-    const data = { degree, institution, to, from  };
-    const About = await About.findByIdAndUpdate(id, data, {
+    const { name, email, phoneNumber, description, links, id } = req.body;
+    const data = { name, email, phoneNumber, description, links  };
+    const about = await About.findByIdAndUpdate(id, data, {
       new: true,
       runValidators: true,
     });
   
-    if (!About) return next(new AppError("No About found with that ID", 404));
+    if (!about) return next(new AppError("No About found with that ID", 404));
   
     res.status(200).json({
       status: "success",
@@ -49,9 +46,9 @@ exports.updateAbout  = catchAsync(async (req, res, next) => {
   });
   
   exports.deleteAbout  = catchAsync(async (req, res, next) => {
-    const About = await About.findByIdAndDelete(req.params.id);
+    const about = await About.findByIdAndDelete(req.params.id);
   
-    if (!About) return next(new AppError("No About found to delete ID", 404));
+    if (!about) return next(new AppError("No About found to delete ID", 404));
   
     res.status(200).json({
       status: "success",
