@@ -2,7 +2,10 @@
 /*------------------------------------------- Header---------------------------------------------- */
 .container {
   position: relative;
-  background: #000;
+  /* background: #000; */
+  background-image: url("./pages/code.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
   clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 70% 75%, 0% 90%);
 }

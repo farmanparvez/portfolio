@@ -29,7 +29,7 @@ function Header() {
       <div className="container" id='home'>
         <div className="row">
           <div className="col-1">
-            <img src="./images/man.png" alt="" />
+            {/* <img src="./images/man.png" alt="" /> */}
           </div>
           <div className="col-1">
             <div className="hero-heading">
