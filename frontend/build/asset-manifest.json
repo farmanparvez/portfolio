@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5a5eecdd.chunk.css",
+    "main.js": "/static/js/main.ea007e7f.chunk.js",
+    "main.js.map": "/static/js/main.ea007e7f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5ebc510a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5ebc510a.js.map",
+    "static/css/2.911e0bd6.chunk.css": "/static/css/2.911e0bd6.chunk.css",
+    "static/js/2.80d915e2.chunk.js": "/static/js/2.80d915e2.chunk.js",
+    "static/js/2.80d915e2.chunk.js.map": "/static/js/2.80d915e2.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.911e0bd6.chunk.css.map": "/static/css/2.911e0bd6.chunk.css.map",
+    "static/css/main.5a5eecdd.chunk.css.map": "/static/css/main.5a5eecdd.chunk.css.map",
+    "static/js/2.80d915e2.chunk.js.LICENSE.txt": "/static/js/2.80d915e2.chunk.js.LICENSE.txt",
+    "static/media/Mohd Farman Parvez.6a81ad8b.pdf": "/static/media/Mohd Farman Parvez.6a81ad8b.pdf",
+    "static/media/style.css": "/static/media/code.7a435087.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5ebc510a.js",
+    "static/css/2.911e0bd6.chunk.css",
+    "static/js/2.80d915e2.chunk.js",
+    "static/css/main.5a5eecdd.chunk.css",
+    "static/js/main.ea007e7f.chunk.js"
+  ]
+}
