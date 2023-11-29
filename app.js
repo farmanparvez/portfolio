@@ -8,7 +8,7 @@ const educationRouter = require('./routes/education')
 const heroRouter = require('./routes/hero')
 const workRouter = require('./routes/work')
 const aboutRouter = require('./routes/about')
-const AppError = require("./utils/appError");
+const AppError = require("./utils/appError")
 const globalErrorHandler = require("./utils/globalErrorHandler");
 
 // app.get('/', (req, res) => res.send("running"))
